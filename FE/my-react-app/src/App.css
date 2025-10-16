@@ -1,123 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7f6;
-  padding: 20px;
+  
+  font-family: "Press Start 2P", cursive;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  margin: 0;
 }
+
+body {
+  background-image: repeating-linear-gradient(45deg, #fafafa 0 10px, #f0f0f0 10px 20px);
+}
+
 
 .todo-container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
+  background: #ffffff;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #888;
+  padding: 20px;
+  width: 400px;
   text-align: center;
-  color: #333;
 }
 
-/* --- Input Form --- */
+
+h1,
+h2 {
+  color: #222;
+  text-shadow: 2px 2px #bdbdbd;
+}
+
+h1 {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+
 .input-form {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 20px;
 }
 
 .input-form input {
-  flex-grow: 1;
+  flex: 1;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  font-size: 10px;
+  border: 3px solid #000;
+  background: #fafafa;
+  box-shadow: 2px 2px 0 #aaa;
+  font-family: "Press Start 2P", cursive;
 }
 
 .input-form button {
-  background-color: #5cb85c;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 10px;
+  background: #87cefa;
+  border: 3px solid #000;
   cursor: pointer;
-  transition: background-color 0.2s;
+  box-shadow: 2px 2px 0 #555;
+  font-family: "Press Start 2P", cursive;
+  transition: transform 0.1s ease;
 }
 
 .input-form button:hover {
-  background-color: #4cae4c;
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }
 
-/* --- Task List --- */
+
 .task-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .task-item {
+  background: #e0e0e0;
+  border: 3px solid #000;
+  box-shadow: 2px 2px 0 #888;
+  margin-bottom: 8px;
+  padding: 8px;
   display: flex;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-  transition: opacity 0.3s ease;
-}
-
-.task-item:last-child {
-  border-bottom: none;
+  justify-content: space-between;
+  font-size: 10px;
 }
 
 .task-item input[type="checkbox"] {
-  margin-right: 15px;
-  width: 18px;
-  height: 18px;
+  transform: scale(1.2);
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .task-text {
-  flex-grow: 1;
-  font-size: 1.1em;
+  flex: 1;
+  text-align: left;
+}
+
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
   color: #555;
 }
 
-/* --- CHECKED/DONE STYLING --- */
-.task-item.completed .task-text {
-  text-decoration: line-through; /* Line through the words */
-  color: #aaa; 
-}
 
-.task-item.completed {
-  opacity: 0.6; /* Make the item transparent */
-}
-
-/* --- Delete Button --- */
 .delete-btn {
-  background: none;
-  border: none;
-  color: #dc3545;
-  font-size: 1.5em;
+  background: #ff6961;
+  border: 2px solid #000;
+  padding: 4px 6px;
   cursor: pointer;
-  margin-left: 10px;
+  font-family: "Press Start 2P", cursive;
+  box-shadow: 2px 2px 0 #333;
+  transition: transform 0.1s ease;
 }
 
 .delete-btn:hover {
-  color: #c82333;
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+
+.todo-section,
+.done-section {
+  margin-top: 20px;
+  border: 3px solid #000;
+  background: #f7f7f7;
+  padding: 10px;
+  box-shadow: 2px 2px 0 #888;
 }
 
 .empty-message {
-    text-align: center;
-    color: #888;
-    padding: 10px;
+  font-size: 8px;
+  color: #777;
+  margin: 10px 0;
 }
 
-/* --- Sections --- */
-.todo-section {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    padding: 10px;
-}
 
-.done-section {
-    border: 1px solid #c3e6cb;
-    background-color: #e2f0e6;
-    border-radius: 4px;
-    padding: 10px;
+.loading {
+  font-size: 10px;
+  color: #444;
+  text-align: center;
+  padding: 50px;
 }
