@@ -1,0 +1,13 @@
+# Compiled code and build artifacts
+/dist
+/build
+*.exe
+*.dll
+
+# Dependencies
+/node_modules
+/venv
+
+# Operating System files
+.DS_Store
+Thumbs.db
