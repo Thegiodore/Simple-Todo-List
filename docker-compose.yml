@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # --- BACKEND SERVICE (EXPRESS API) ---
+  backend:
+    container_name: todo_backend
+    build: 
+      context: ./BE/my-express-app
+    ports:
+      - "3001:3001" 
+    # Use the volumes below for development to instantly see code changes
+    volumes:
+      - ./BE/my-express-app:/app 
+      - /app/node_modules
+    environment:
+      # Optional: set an environment variable if you want the API to be configurable
+      NODE_ENV: development
+
+  # --- FRONTEND SERVICE (REACT UI) ---
+  frontend:
+    container_name: todo_frontend
+    build: 
+      context: ./FE/my-react-app
+    ports:
+      - "80:80" 
+    depends_on:
+      - backend
+    environment:
+      # IMPORTANT: Use this environment variable in your React code for API calls!
+      # E.g., const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001/api/todos';
+      VITE_BACKEND_URL: http://backend:3001/api/todos # Access via Docker service name
