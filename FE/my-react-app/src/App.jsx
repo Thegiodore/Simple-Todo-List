@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-const API_URL = 'http://localhost:3001/api/todos'; // **NOTE:** This URL must use 'backend' when running in Docker Compose!
+// Ensure this line uses the VITE_BACKEND_URL environment variable:
+const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001/api/todos';
 
 function App() {
   const [todos, setTodos] = useState([]);
