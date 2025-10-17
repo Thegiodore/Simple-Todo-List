@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// Ensure this line uses the VITE_BACKEND_URL environment variable:
 const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001/api/todos';
 
 function App() {
